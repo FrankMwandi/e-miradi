@@ -1,0 +1,24 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet", href={% static 'css/base.css' %}>
+
+</head>
+<body>
+    <div id='header'> 
+        <span class='logo' > e-Miradi </span>
+    </div>
+
+    <div id='content'> 
+        {% block content %}    
+        {% endblock %}
+    </div>
+
+
+
+</body>
+</html>
