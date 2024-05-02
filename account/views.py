@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.auth import login , authenticate
+from django.contrib.auth import login , authenticate, logout
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 def user_login(request):
@@ -33,3 +35,7 @@ def dashboard(request):
     return render(request,
                   'account/dashboard.html',
                   {'section':'dashboard'})
+
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('login'))
