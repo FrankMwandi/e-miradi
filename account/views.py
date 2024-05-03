@@ -3,8 +3,6 @@ from django.http import HttpResponse
 from django.contrib.auth import login , authenticate, logout
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 
 def user_login(request):
@@ -38,4 +36,4 @@ def dashboard(request):
 
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('login'))
+    return render(request,'registration/logged_out.html' )
