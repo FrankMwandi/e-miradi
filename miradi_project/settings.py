@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #social django
     "social_django",
+    #django extensions
+    "django_extensions",
     
    
 ]
