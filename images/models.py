@@ -10,10 +10,10 @@ class Image(models.Model):
     url = models.URLField(max_length=2000)
     image = models.ImageField(upload_to='images/%Y/%m/%d/')
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                        related_name="images-created",
+                        related_name="images_created",
                         on_delete=models.CASCADE)
     user_likes = models.ManyToManyField(settings.AUTH_USER_MODEL,
-                            related_name='images-liked',blank=True)
+                            related_name='images_liked',blank=True)
     
     def save(self, *args, **kwargs):
         if not self.slug:
